@@ -11,7 +11,7 @@ describe('updateUser', () => {
   it('should update a user successfully', async () => {
     const id = 1;
     const updatedData = { name: 'Jane', email: 'jane@example.com' };
-    UserRepository.update.mockResolvedValue([1]); // Mock that one row was updated
+    UserRepository.update.mockResolvedValue([1]); 
 
     const result = await updateUserFn(UserRepository)(id, updatedData);
 
@@ -22,7 +22,7 @@ describe('updateUser', () => {
   it('should throw error if user not found', async () => {
     const id = 999;
     const updatedData = { name: 'Jane' };
-    UserRepository.update.mockResolvedValue([0]); // No rows updated
+    UserRepository.update.mockResolvedValue([0]); 
 
     try {
       await updateUserFn(UserRepository)(id, updatedData);
